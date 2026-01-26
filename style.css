@@ -1,9 +1,24 @@
-body {
+/* Layout geral */
+html, body {
+    height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #F5EBDD;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Cabeçalho */
 header {
     background-color: #C8A97E;
     padding: 20px;
@@ -18,11 +33,7 @@ nav a {
     font-weight: bold;
 }
 
-main {
-    padding: 40px;
-    text-align: center;
-}
-
+/* Cards */
 .produtos {
     display: flex;
     justify-content: center;
@@ -38,6 +49,7 @@ main {
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
+/* Botão */
 .btn {
     display: inline-block;
     margin-top: 20px;
@@ -48,6 +60,7 @@ main {
     text-decoration: none;
 }
 
+/* Rodapé */
 footer {
     background-color: #C8A97E;
     color: white;
@@ -56,14 +69,14 @@ footer {
 }
 
 /* Galeria do rodapé */
-footer .galeria-rodape {
+.galeria-rodape {
     margin-top: 12px;
     display: flex;
     justify-content: center;
     gap: 12px;
 }
 
-footer .galeria-rodape img {
+.galeria-rodape img {
     width: 60px;
     height: 60px;
     object-fit: cover;
