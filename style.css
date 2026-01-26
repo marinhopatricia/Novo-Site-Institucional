@@ -36,6 +36,14 @@ main {
     text-align: center;
 }
 
+/* Evita imagem grande estourar layout */
+main img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 /* Cards */
 .produtos {
     display: flex;
@@ -77,6 +85,22 @@ footer {
     color: white;
     text-align: center;
     padding: 15px;
+}
+
+/* ===== Galeria de imagens do rodapé ===== */
+.galeria-rodape {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.galeria-rodape img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 /* =========================
@@ -139,44 +163,39 @@ footer {
 
 .form-pedido button {
     width: 100%;
-    padding
-
-    .galeria-rodape {
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: #C8A97E;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
-.galeria-rodape img {
-    width: 90px;
-    height: 90px;
-    object-fit: cover;
-    border-radius: 8px;
-}
+/* Responsivo */
+@media (max-width: 700px) {
+    main {
+        padding: 20px;
+    }
 
-    main img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
 
-    /* ===== Galeria de imagens do rodapé ===== */
-.galeria-rodape {
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
+    .card {
+        width: 80%;
+        max-width: 320px;
+    }
 
-.galeria-rodape img {
-    width: 90px;
-    height: 90px;
-    object-fit: cover;
-    border-radius: 8px;
+    .btn {
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+    }
 }
 
 
