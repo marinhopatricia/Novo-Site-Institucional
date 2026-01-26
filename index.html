@@ -8,98 +8,29 @@
 </head>
 <body>
 
-    <header>
-        <h1>Doces da Vovó</h1>
-        <nav>
-            <a href="#inicio">Início</a>
-            <a href="#produtos">Produtos</a>
-            <a href="#contato">Contato</a>
-        </nav>
-    </header>
+<header>
+    <h1>Doces da Vovó</h1>
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
 
-    <main id="inicio">
+<main id="inicio">
 
-        <section class="produtos" id="produtos">
-            <div class="card">Bolo</div>
-            <div class="card">Torta</div>
-            <div class="card">Docinho</div>
-        </section>
-
-        <section class="apresentacao">
-            <h2>Bem-vindo à Doces da Vovó</h2>
-            <p>Doces artesanais feitos com receitas tradicionais de família.</p>
-
-            <!-- Abre o formulário (modal) -->
-            <a class="btn" href="#pedido">Fazer Pedido</a>
-        </section>
-
-        <section id="contato" class="contato">
-            <h2>Contato</h2>
-            <p>Atendimento: Seg a Sáb — 08h às 18h</p>
-            <p>WhatsApp: (95) 98426-5839</p>
-        </section>
-
-    </main>
-
-    <footer>
-    <p>Doces da Vovó © 2026</p>
-
-    <div class="galeria-rodape">
-        <img src="/Novo-Site-Institucional/img/doce1.jpg">
-<img src="/Novo-Site-Institucional/img/doce2.jpg">
-<img src="/Novo-Site-Institucional/img/doce3.png">
-
-    </div>
-</footer>
-
-
-    <!-- MODAL -->
-    <section id="pedido" class="modal" aria-label="Formulário de pedido">
-        <div class="modal-conteudo">
-            <a href="#" class="fechar" aria-label="Fechar formulário">×</a>
-
-            <h2>Fazer Pedido</h2>
-            <p>Preencha os dados e envie seu pedido no WhatsApp.</p>
-
-            <form class="form-pedido" action="#" method="post">
-                <label>
-                    Nome
-                    <input type="text" name="nome" placeholder="Seu nome" required>
-                </label>
-
-                <label>
-                    Produto
-                    <select name="produto" required>
-                        <option value="" selected disabled>Escolha um produto</option>
-                        <option>Bolo</option>
-                        <option>Torta</option>
-                        <option>Docinho</option>
-                    </select>
-                </label>
-
-                <label>
-                    Quantidade
-                    <input type="number" name="quantidade" min="1" placeholder="Ex.: 2" required>
-                </label>
-
-                <label>
-                    Observações
-                    <textarea name="obs" rows="3" placeholder="Ex.: sem lactose, embalagem para presente..."></textarea>
-                </label>
-
-                <!-- Envia para WhatsApp -->
-                <button type="button" onclick="enviarPedido()">Enviar Pedido</button>
-
-                <p class="obs">
-                    Ao clicar, o WhatsApp abrirá com a mensagem pronta.
-                </p>
-            </form>
-        </div>
+    <section class="produtos" id="produtos">
+        <div class="card">Bolo</div>
+        <div class="card">Torta</div>
+        <div class="card">Docinho</div>
     </section>
 
-    <!-- JS separado -->
-    <script src="script.js"></script>
-</body>
-</html>
+    <section class="apresentacao">
+        <h2>Bem-vindo à Doces da Vovó</h2>
+        <p>Doces artesanais feitos com receitas tradicionais de família.</p>
+        <a class="btn" href="#pedido">Fazer Pedido</a>
+    </section>
 
-
+    <section id="contato" class="contato">
+        <h2>Contato</h2>
+        <p>Atendimento: Seg a Sáb —
