@@ -163,6 +163,24 @@ footer {
     margin: 0 auto;
 }
 
+    /* ===== Galeria de imagens do rodapé ===== */
+.galeria-rodape {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.galeria-rodape img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+
 
 
 
