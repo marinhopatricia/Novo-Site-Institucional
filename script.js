@@ -1,24 +1,18 @@
 function enviarPedido() {
-    const nome = document.querySelector('input[name="nome"]').value.trim();
+    const nome = document.querySelector('input[name="nome"]').value;
     const produto = document.querySelector('select[name="produto"]').value;
-    const quantidade = document.querySelector('input[name="quantidade"]').value.trim();
-    const obs = document.querySelector('textarea[name="obs"]').value.trim();
+    const quantidade = document.querySelector('input[name="quantidade"]').value;
+    const obs = document.querySelector('textarea[name="obs"]').value;
 
-    if (!nome || !produto || !quantidade) {
-        alert("Preencha nome, produto e quantidade!");
-        return;
-    }
+    const numero = "5595984265839";
 
-    const mensagem =
-`Olá! Meu nome é ${nome}.
-Gostaria de fazer um pedido:
+    const mensagem = `Olá! Meu nome é ${nome}.
+Quero pedir:
 Produto: ${produto}
 Quantidade: ${quantidade}
-Observações: ${obs || "Sem observações."}`;
-
-    // SEU WHATSAPP (sem +, sem espaço, sem traços)
-    const numero = "5595984265839";
+Obs: ${obs}`;
 
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
     window.open(url, "_blank");
 }
+
