@@ -1,55 +1,32 @@
-/* Estilo geral */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #F5EBDD;
 }
 
-/* Cabeçalho */
 header {
     background-color: #C8A97E;
     padding: 20px;
     text-align: center;
-}
-
-header h1 {
-    margin: 0;
     color: white;
 }
 
-/* Menu */
-nav {
-    margin-top: 10px;
-}
-
 nav a {
-    display: inline-block;
     margin: 0 10px;
     text-decoration: none;
     color: white;
     font-weight: bold;
 }
 
-/* Conteúdo */
 main {
     padding: 40px;
     text-align: center;
 }
 
-/* Evita imagem grande estourar layout */
-main img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-/* Cards */
 .produtos {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin: 30px 0;
     flex-wrap: wrap;
 }
 
@@ -58,28 +35,19 @@ main img {
     padding: 20px;
     width: 150px;
     border-radius: 10px;
-    text-align: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    transition: transform 0.15s ease;
 }
 
-.card:hover {
-    transform: translateY(-3px);
-}
-
-/* Botão */
 .btn {
     display: inline-block;
     margin-top: 20px;
     padding: 12px 25px;
     background-color: #F2B6C1;
     color: white;
-    text-decoration: none;
     border-radius: 8px;
-    font-weight: bold;
+    text-decoration: none;
 }
 
-/* Rodapé */
 footer {
     background-color: #C8A97E;
     color: white;
@@ -87,37 +55,29 @@ footer {
     padding: 15px;
 }
 
-
-/* ===== Galeria de imagens do rodapé ===== */
-.galeria-rodape {
-    margin-top: 15px;
+/* Galeria do rodapé */
+footer .galeria-rodape {
+    margin-top: 12px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 15px;
+    gap: 12px;
 }
 
-.galeria-rodape img {
-    width: 70px;
-    height: 70px;
+footer .galeria-rodape img {
+    width: 60px;
+    height: 60px;
     object-fit: cover;
-    border-radius: 8px;
-    display: block;
+    border-radius: 10px;
 }
 
-
-/* =========================
-   MODAL SEM JS (:target)
-   ========================= */
+/* Modal */
 .modal {
+    display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.55);
-    display: none;
+    background: rgba(0,0,0,0.5);
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    z-index: 999;
 }
 
 .modal:target {
@@ -126,93 +86,8 @@ footer {
 
 .modal-conteudo {
     background: white;
-    width: min(520px, 100%);
-    border-radius: 14px;
-    padding: 22px;
-    text-align: left;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-}
-
-.fechar {
-    position: absolute;
-    top: 10px;
-    right: 14px;
-    text-decoration: none;
-    font-size: 26px;
-    font-weight: bold;
-    color: #555;
-}
-
-/* Form */
-.form-pedido label {
-    display: block;
-    margin: 12px 0;
-    font-weight: bold;
-    color: #333;
-}
-
-.form-pedido input,
-.form-pedido select,
-.form-pedido textarea {
-    width: 100%;
-    margin-top: 6px;
-    padding: 10px;
+    padding: 20px;
     border-radius: 10px;
-    border: 1px solid #ddd;
-    box-sizing: border-box;
-    font-weight: normal;
+    width: 90%;
+    max-width: 400px;
 }
-
-.form-pedido button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 10px;
-    background-color: #C8A97E;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-/* Responsivo */
-@media (max-width: 700px) {
-    main {
-        padding: 20px;
-    }
-
-    nav {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-    }
-
-    .card {
-        width: 80%;
-        max-width: 320px;
-    }
-
-    .btn {
-        width: 100%;
-        max-width: 320px;
-        text-align: center;
-    }
-}
-
-footer {
-    background-color: #C8A97E;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    width: 100%;
-}
-
-
-
-
-
-
-
-
