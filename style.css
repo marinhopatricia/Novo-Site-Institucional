@@ -201,6 +201,15 @@ footer {
     }
 }
 
+footer {
+    background-color: #C8A97E;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+}
+
+
 
 
 
