@@ -87,21 +87,24 @@ footer {
     padding: 15px;
 }
 
+
 /* ===== Galeria de imagens do rodapé ===== */
 .galeria-rodape {
     margin-top: 15px;
     display: flex;
     justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
 }
 
 .galeria-rodape img {
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
     object-fit: cover;
     border-radius: 8px;
+    display: block;
 }
+
 
 /* =========================
    MODAL SEM JS (:target)
@@ -197,6 +200,7 @@ footer {
         text-align: center;
     }
 }
+
 
 
 
