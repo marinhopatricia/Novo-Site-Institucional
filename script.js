@@ -1,18 +1,22 @@
 function enviarPedido() {
-    const nome = document.querySelector('input[name="nome"]').value;
-    const produto = document.querySelector('select[name="produto"]').value;
-    const quantidade = document.querySelector('input[name="quantidade"]').value;
-    const obs = document.querySelector('textarea[name="obs"]').value;
+    let nome = document.querySelector('input[name="nome"]').value;
+    let produto = document.querySelector('select[name="produto"]').value;
+    let quantidade = document.querySelector('input[name="quantidade"]').value;
+    let obs = document.querySelector('textarea[name="obs"]').value;
 
-    const numero = "5595984265839";
+    if (!nome || !produto || !quantidade) {
+        alert("Preencha nome, produto e quantidade!");
+        return;
+    }
 
-    const mensagem = `Olá! Meu nome é ${nome}.
-Quero pedir:
+    let mensagem = `Olá! Meu nome é ${nome}.
+Gostaria de fazer um pedido:
 Produto: ${produto}
 Quantidade: ${quantidade}
-Obs: ${obs}`;
+Observações: ${obs}`;
 
-    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
-    window.open(url, "_blank");
+    let numero = "5599999999999"; // trocar pelo número real
+    let url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+
+    window.open(url, '_blank');
 }
-
