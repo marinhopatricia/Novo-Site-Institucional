@@ -1,94 +1,196 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doces da Vovó</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* Professor: reset básico para evitar espaçamentos inesperados */
+* {
+  box-sizing: border-box;
+}
 
-    <header>
-        <h1>Doces da Vovó</h1>
-        <nav>
-            <a href="#inicio">Início</a>
-            <a href="#produtos">Produtos</a>
-            <a href="#contato">Contato</a>
-        </nav>
-    </header>
+/* Estilo geral */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #F5EBDD;
+}
 
-    <main id="inicio">
+/* Cabeçalho */
+header {
+  background-color: #C8A97E;
+  padding: 20px;
+  text-align: center;
+}
 
-        <section class="produtos" id="produtos">
-            <div class="card">Bolo</div>
-            <div class="card">Torta</div>
-            <div class="card">Docinho</div>
-        </section>
+header h1 {
+  margin: 0;
+  color: white;
+}
 
-        <section class="apresentacao">
-            <h2>Bem-vindo à Doces da Vovó</h2>
-            <p>Doces artesanais feitos com receitas tradicionais de família.</p>
+/* Menu */
+nav {
+  margin-top: 10px;
+}
 
-            <!-- Abre o formulário no centro (sem JS) -->
-            <a class="btn" href="#pedido">Fazer Pedido</a>
-        </section>
+nav a {
+  display: inline-block;
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
 
-        <section id="contato" class="contato">
-            <h2>Contato</h2>
-            <p>Atendimento: Seg a Sáb — 08h às 18h</p>
-            <p>WhatsApp: (95) 99999-9999</p>
-        </section>
+/* Conteúdo */
+main {
+  padding: 40px;
+  text-align: center;
+}
 
-    </main>
+/* Cards */
+.produtos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+  flex-wrap: wrap; /* melhora em telas menores */
+}
 
-    <footer>
-        <p>Doces da Vovó © 2026</p>
-    </footer>
+/* Professor: mantém todas as imagens com o mesmo "tamanho visual" sem distorcer */
+.card-img {
+  width: 100%;
+  height: 160px;        /* altura fixa: padroniza vertical e horizontal */
+  object-fit: cover;    /* aqui está o segredo: não estica, só recorta */
+  display: block;
+}
 
-    <!-- MODAL (abre com :target) -->
-    <section id="pedido" class="modal" aria-label="Formulário de pedido">
-        <div class="modal-conteudo">
-            <a href="#" class="fechar" aria-label="Fechar formulário">×</a>
+/* Textos do card */
+.card-titulo {
+  margin: 12px 12px 6px;
+  font-size: 18px;
+}
 
-            <h2>Fazer Pedido</h2>
-            <p>Preencha os dados e envie seu pedido.</p>
+.card-desc {
+  margin: 0 12px 14px;
+  font-size: 14px;
+  color: #555;
+}
 
-            <form class="form-pedido" action="#" method="post">
-                <label>
-                    Nome
-                    <input type="text" name="nome" placeholder="Seu nome" required>
-                </label>
 
-                <label>
-                    Produto
-                    <select name="produto" required>
-                        <option value="" selected disabled>Escolha um produto</option>
-                        <option>Bolo</option>
-                        <option>Torta</option>
-                        <option>Docinho</option>
-                    </select>
-                </label>
+/* Botão padrão */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #F2B6C1;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
 
-                <label>
-                    Quantidade
-                    <input type="number" name="quantidade" min="1" placeholder="Ex.: 2" required>
-                </label>
+/* Rodapé */
+footer {
+  background-color: #C8A97E;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
 
-                <label>
-                    Observações
-                    <textarea name="obs" rows="3" placeholder="Ex.: sem lactose, embalagem para presente..."></textarea>
-                </label>
+/* =========================
+   MODAL SEM JAVASCRIPT (:target)
+   ========================= */
 
-                <!-- Sem JS: botão só “simula” envio -->
-                <button type="submit">Enviar Pedido</button>
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55); /* fundo escurecido */
+  display: none; /* escondido por padrão */
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 999;
+}
 
-                <p class="obs">
-                    *Sem JavaScript, este botão não envia para WhatsApp automaticamente.
-                    (Na próxima etapa, dá pra ensinar um “copiar e colar” ou usar link do WhatsApp com texto fixo.)
-                </p>
-            </form>
-        </div>
-    </section>
+/* Quando clicar em href="#pedido", o id vira :target */
+.modal:target {
+  display: flex;
+}
 
-</body>
-</html>
+.modal-conteudo {
+  background: white;
+  width: min(520px, 100%);
+  border-radius: 14px;
+  padding: 22px;
+  text-align: left;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.fechar {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  text-decoration: none;
+  font-size: 26px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Form */
+.form-pedido label {
+  display: block;
+  margin: 12px 0;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-pedido input,
+.form-pedido select,
+.form-pedido textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-weight: normal;
+}
+
+.form-pedido button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: #C8A97E;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.obs {
+  font-size: 12px;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 700px) {
+  main {
+    padding: 20px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 360px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    display: inline-block;
+  }
+}
+
